@@ -43,6 +43,6 @@ public class GameTest {
         game.addPlayer("conch", 5000);
         game.addPlayer("ian", 5000);
         game.placeBet("conch", 3000);
-        game.start();
+        game.notBettingPlayerCheck();
     }
 }

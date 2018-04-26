@@ -28,6 +28,7 @@ public class PlayerTest {
         player.placeBet(1000);
         int currentBet = player.getCurrentBet();
         assertThat(currentBet, is(1000));
+
     }
 
     @Test(expected = Exception.class)
