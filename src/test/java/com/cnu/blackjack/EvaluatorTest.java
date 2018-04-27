@@ -1,4 +1,4 @@
-package com.cnu.blackjack;
+﻿package com.cnu.blackjack;
 
 import org.junit.Test;
 
@@ -69,6 +69,16 @@ public class EvaluatorTest {
 
     @Test
     public void 각_플레이어는_17이상이면_스테이한다() {
-
+	Deck deck = new Deck(1);
+	Hand hand = new Hand(deck);
+	int result = 0;
+	Player player = new Player(5000, hand);
+	for(int i = 0; i < hand.getHandList().size(); i++){
+		result += hand.getHandList().get(i).getRank();
+	}
+	if(result >= 17){
+		player.stay();
+	}
+	assertTrue(result < 17);
     }
 }
