@@ -22,9 +22,9 @@ public class EvaluatorTest {
         Map<String, Player> playerList = new HashMap<>();
         playerList.put("asd", player);
         Evaluator evaluator = new Evaluator(playerList);
-
+	
         int size = playerList.get("asd").getHand().getCardList().size();
-
+	
         if (player.getHand().getCardList().get(0).getRank() + player.getHand().getCardList().get(1).getRank() <= 16 ) {
             player.hitCard();
             size = playerList.get("asd").getHand().getCardList().size();
