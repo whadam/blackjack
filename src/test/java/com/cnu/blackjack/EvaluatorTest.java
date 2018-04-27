@@ -18,7 +18,21 @@ public class EvaluatorTest {
 
     @Test
     public void 각_플레이어는_16이하면_히트한다() {
-
+	Player player = new Player(5000, new Hand(new Deck(1)));
+        Map<String, Player> playerList = new HashMap<>();
+        playerList.put("asd", player);
+        Evaluator evaluator = new Evaluator(playerList);
+	
+        int size = playerList.get("asd").getHand().getCardList().size();
+	
+        if (player.getHand().getCardList().get(0).getRank() + player.getHand().getCardList().get(1).getRank() <= 16 ) {
+            player.hitCard();
+            size = playerList.get("asd").getHand().getCardList().size();
+            assertThat(size, is(3));
+        }
+        else {
+            assertThat(size, is(2));
+        }
     }
 
     @Test
