@@ -13,7 +13,14 @@ public class EvaluatorTest {
 
     @Test
     public void 게임초기화시_모든플레이어는_2장의카드를_받는다() {
-
+	Map<String, Player> playerList = new HashMap<>();
+	Deck deck = new Deck(1);
+	Hand hand = new Hand(deck);
+	Player player = new Player(5000, hand);
+	playerList.put("1p", player);
+	Evaluator evaluator = new Evaluator(playerList);
+	int a = playerList.get("1p").getHand().getCardList().size();
+	assertThat(a,is(2));
     }
 
     @Test
